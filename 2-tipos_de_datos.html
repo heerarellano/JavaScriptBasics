@@ -1,0 +1,249 @@
+<!--
+
+    Nombre del programa archivo: 2-tipos_de_datos.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizarán los diferentes tipos de datos  no primitivos (arrays,objetos)
+    y primitivos(null, undefined, symbol,  string, number, boolean). 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta nombre="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    //Definición de funciones para escribir en HTML.
+
+    /*
+         Nombre de función: imprimirTitulo
+         Copyright: FAHJ
+         Autor: Francisco Arellano Herdson Josué 
+         Fecha: 01/06/2022
+         Parámetros: 
+             por valor: 
+                 mensaje: Es un string pasado por valor para imprimir el título en html. 
+         Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+    function imprimirTitulo(mensaje) {
+
+        document.write("<h1>" + mensaje + "</h1>");
+        document.write("<br>");
+
+    }
+
+    /*
+         Nombre de la función: imprimirContenido. 
+         Copyright: FAHJ
+         Autor: Francisco Arellano Herdson Josué
+         Fecha: 01/06/2022
+         Versión: 1.0
+         Parámetros: 
+             por valor: 
+                 mensaje: Es un string pasado por valor para imprimir el contenido
+         Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje) {
+
+        document.write("<h3>" + mensaje + "</h3>");
+
+    }
+
+    /*
+       Nombre de función: imprimirNotas
+       Copyright: FAHJ
+       Autor: Francisco Arellano Herdson Josué
+       Fecha: 03/06/2022
+       Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+       Parámetros: 
+           por valor: 
+               mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+   */
+
+    function imprimirNotas(mensaje) {
+
+        document.write("<h4>" + mensaje + "</h4>");
+
+    }
+
+
+
+//Tipos de datos (primitivos y no primitivos)
+    
+
+    imprimirTitulo("Tipos de datos");
+
+//Primitivos
+/*ECMA  Script (estándar) define 7 tipos de datos: */
+    
+    
+    let variableSymbol = Symbol('Hola'); //   1-Symbol
+    let variableNULL = null; //  2-null
+    let variableUndefined=undefined; // 3-Undifined
+    let variableBooleana = false; //  4-Boolen
+    let variableString = 'Pedro'; // 5-String
+    let variableNumero = 10;// 6-Number
+    // 7-Object->Se analizará más adelante en este mismo archivo.
+
+    imprimirTitulo("Datos primitivos");
+    imprimirContenido("Variable Symbol (Symbol()): " + String(variableSymbol));
+    imprimirContenido("Variable NULL (null): " + variableNULL);
+    imprimirContenido("Variable undefined (undefined): " + variableUndefined);
+    imprimirContenido("Variable booleana (Boolean): " + variableBooleana);
+    imprimirContenido('Variable string (String ""): ' + variableString);
+    //Number: Podemos utilizar bigint y notación científica. 
+    imprimirContenido("Variable numérica (Number): " + variableNumero);
+    //Symbol: Valores únicos e inmutables
+    //Tiene asociado un valor tipo estring o undefined que sirve como descripción del símbolo.
+
+
+// No primitivos  
+    //Arreglos   (Es un objeto)  
+    //Arreglo sencillo con diferentes tipos de datos.
+     
+    imprimirTitulo("Datos no primitivos");
+    imprimirTitulo("Arreglos [ ]");
+    var arregloMixto = [1, null,false , ":D", undefined, "Hola", 12E10, 111_111_111];
+    imprimirContenido("Arreglo sencillo con diferentes tipos de dato [ ] : " + arregloMixto);
+
+    imprimirContenido("<br></br>"); 
+    //Arreglo llave->valor sencillo   arregloClaveValor =  { 1:2,   }
+    //Nota: Las claves y los valores pueden ser 
+    var arregloClaveValor = { primerId: 100, segundoId: 200, "tercerID": 'Hola', 1:2};
+    imprimirContenido("Arreglo clave:valor {clave1 :valor1, clave2 :valor2, ... claveN:valorN}   :  ");
+    for (var i in arregloClaveValor) {
+        imprimirContenido(" " + arregloClaveValor[i] + " ");
+    }
+    
+    
+    imprimirContenido("<br></br>"); 
+    //Arreglo con clase  Array. 
+    var arregloConClase = new Array();
+    arregloConClase[1] = "Hola como estas.";
+    arregloConClase["b"] = "Bien gracias y tu?"
+    arregloConClase[2] = 3
+    arregloConClase["p"] = 56;
+    //Invalid:  arregloConClase[a] = 56;
+    imprimirContenido("Arreglo con la clase new Array(): ");
+    for (var i in arregloConClase) {
+        imprimirContenido(" " + arregloConClase[i] + " ")
+    }
+    
+    //Arreglo con clase  MAP. 
+    imprimirContenido("<br></br>"); 
+
+    var map = new Map();
+    map.set('nombre', 'Juan');
+    map.set('id', 15);
+    imprimirContenido("Arreglo con la clase new Map(): ")
+    for (let valor of map.values()) {
+        imprimirContenido(valor);
+    }
+
+    //Objetos 
+
+    imprimirTitulo("Objetos { }")
+
+    let user1 = {
+        nombre: "Rene",
+        apellido: "Gónzalez",
+        edad: 1006,
+        correo: "rene@dominio_inventado.com"
+    };
+
+    let user2 = {
+        nombre: "Mateo",
+        apellido: "Sánchez",
+        edad: 23,
+        correo: "Mateo@dominio_inventado.com"
+    };
+
+    
+
+    imprimirContenido("El atributo del objeto user1.nombre  es:  " + user1.nombre); // -> Calvin
+    imprimirContenido("El atributo del objeto user2.nombre es:  " + user2.nombre); // -> Mateus
+    imprimirContenido("El atributo del objeto  user1.edad es:   " + user1.edad); // -> 66
+    user1.edad = 67;
+    imprimirContenido("El atributo del objeto user1.edad  es:  " + user1.edad); // -> 67
+    imprimirContenido("El atributo del objeto user2.phone  es:  " + user2.phone); // -> undefined
+    user2.phone = "904-399-7557";
+    imprimirContenido("El atributo del objeto user2.phone  es:  " + user2.phone); // -> 904-399-7557
+
+
+    //Otros tipos de datos enteros. 
+    imprimirTitulo("Otros tipos de datos enteros");
+    let numeroDecimal = 10; // decimal - default 
+    let numeroHexadecimal = 0x10; // hexadecimal 
+    let numeroOctal = 0o10; // octal 
+    let numeroBinario = 0b1010011; // binary 
+    //Notación científica. 
+    let notacionPositiva= 2E10; 
+    let notacionNegativa=2E-4 ; 
+
+    imprimirContenido(" decimal - default  : " + numeroDecimal); 
+    imprimirContenido(" hexadecimal : " + numeroHexadecimal); 
+    imprimirContenido(" octal  : " + numeroOctal);
+    imprimirContenido(" binary  : " + numeroBinario);
+    imprimirContenido(" Notación científica de números grandes : " + notacionPositiva);
+    imprimirContenido(" Notación científica de números pequeños: " +notacionNegativa);
+
+    
+    imprimirTitulo("Arreglo De Objetos [ { }, { } ]");
+    let usuarios = [
+        {
+            nombre: "Eduardo",
+            apellido: "Arellano",
+            edad: 66,
+            correo: "Eduardo@teleworm.u"
+        },
+        {
+            nombre: "Mateo",
+            apellido: "Gónzalez",
+            edad: 21,
+            correo: "MateusPinto@dayrep.com"
+        }
+    ];
+
+    imprimirContenido("El contenido para el atributo usuarios[0].nombre del objeto es: " + usuarios[0].nombre); // -> Calvin
+    imprimirContenido("El contenido para el atributo usuarios[1].edad  del objeto es: " + usuarios[1].edad); // -> 21
+
+    usuarios[2] =
+    {
+        nombre: "Irene",
+        apellido: "Purnell",
+        edad: 32,
+        correo: "IreneHPurnell@rhyta.com"
+
+    }
+
+    imprimirContenido("El contenido para el atributo usuarios[0].nombre del objeto es: " + usuarios[0].nombre); // -> Calvin
+    imprimirContenido("El contenido para el atributo  usuarios[1].nombre  del objeto es: " + usuarios[1].nombre); // -> Mateus
+    imprimirContenido("El contenido para el atributo  usuarios[2].nombre  del objeto es: " + usuarios[2].nombre); // -> Irene
+
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+
+</script>

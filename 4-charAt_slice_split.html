@@ -1,0 +1,111 @@
+<!-- 
+    Nombre del archivo: 4-charAt_slice_split.html 
+    Copyright:  FAHJ
+    Autor:  Francisco Arellano Herdson Josué
+    Fecha : 03/06/2022
+    Versión:  1.0
+    Descripción: En este documento se analizará como funcionan los métodos: charAt (tomar un caracter de una cadena por su posición),
+     slice(obtener partes de una cadena), split (obtener substrings de una frase). 
+
+ -->
+
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>charAt, slice, split</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    }
+
+     /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+
+//Métodos charAt, slice, split
+
+    let cadena = "Java Script Lenguaje de programación"; 
+    imprimirTitulo("Métodos charAt, slice, split"); 
+    imprimirContenido("Cadena original (let cadena = 'Java Script Language') :  " + cadena)
+    //.charAt(número)
+    imprimirTitulo(".charAt(posición)"); 
+    imprimirContenido("charAt toma un caracter de una cadena por su posición (cadena.charAt(1)) : " + cadena.charAt(1)); // -> a
+    //.slice(inicio, final)
+        //Nota: EL final es opcional, es decir, si no indicamos el final obtendremos toda
+        //la cadena desde el inicio que se marcó hasta el final. 
+    imprimirTitulo(".sliceslice(inicio, final)"); 
+    imprimirContenido("slice (corta una cadena(inicio, final)) por su posición: " + cadena.slice(0, 3));//->Jav
+    //.split(separador)
+        //Nota: es separador puede ser una coma un espacio en blanco and so on. 
+    imprimirTitulo("split('separador')"); 
+    imprimirContenido("split Crea un array con subcadenas pasandole un separador (cadena.split('' '')): " + cadena.split(" ")); //->Java,Script,Language
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+
+ 
+ </script>

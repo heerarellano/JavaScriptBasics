@@ -1,0 +1,143 @@
+<!-- 
+
+    Nombre del programa archivo:  29-funciones_dentro_de_variables. O
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar como podemos guardar funciones dentro de variables. 
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>funciones dentro de variables</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Defición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+//Funciones dentro de variables. 
+        //Cada función en JS es actualmente un objeto Function. 
+        imprimirTitulo("Funciones dentro de variables"); 
+
+        //Utilizando el nombre de una variable como función. 
+        imprimirContenido("Primera función: Asignando una función ya declarada a una variable y utilizando el nombre de esa variable como función. ")
+
+        function mostrarMensaje(mensaje) {
+             imprimirContenido( `Mensaje: ${mensaje} `);
+        }
+        let sm = mostrarMensaje; //Se debe colocar sin paréntesis de lo contrario se activaria la función al cargar el navegador.
+                                    //y no cuando se de clic( en caso de usar botones) o cuando se llame la función.
+
+        sm("Funciona!"); // -> Message: This works!
+        mostrarMensaje("También funciona!")
+
+        imprimirContenido("El tipo de dato de sm es ('let sm ') es : " + typeof sm); // -> function
+        imprimirContenido("<br>")
+
+        //Creando una variable con la clase Function. 
+        imprimirContenido("Segunda función: Creando una variable con la clase Function. ")
+        var multiplicar = new Function("x", "y", "return x * y");
+        imprimirContenido('var multiplicar = new Function("x", "y", "return x * y");')
+        var respuesta = multiplicar(7, 6);
+        imprimirContenido('var respuesta = multiplicar(7, 6);')
+        imprimirContenido(respuesta)
+
+        imprimirContenido("<br>")
+        imprimirContenido("Tercera función: Asignando directamente una función a una variable y utilizando su nombre como función."); 
+
+        //Podemos definir la función directamente en la variable. 
+
+        let suma = function add(a, b) { //Se puede omitir el nombre de la función
+
+            return a + b;
+            
+        }
+
+        //Podemos utilizar el nombre de la variable o la misma función. 
+        imprimirContenido("suma(10, 20) = " + suma(10, 20) ); // -> 30
+
+
+        imprimirContenido("<br>")
+        imprimirContenido("Cuarto: funcion anónima"); 
+        //No tiene nombre 
+        let cuadrado = function (a){
+            return a**2; 
+        }
+        let pruebaCuadrado = cuadrado(3); 
+        imprimirContenido(pruebaCuadrado)
+
+
+             
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+
+   
+</script>

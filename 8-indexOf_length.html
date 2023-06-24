@@ -1,0 +1,117 @@
+<!-- 
+
+    Nombre del programa archivo: 8-indexOf_lenght.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso del método .indexOf para encontrar la coincidencia de un elemento
+    en un array y el método .lenght para encontrar cuantos elementos tiene un arrayo un string. 
+
+ -->
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>indexOf &  lenght</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones.
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+
+      /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+//indexOf & length
+    //length->Devuelve la cantidad total de elementos que tiene un array o un string. 
+    imprimirTitulo("Métodos indexOf &  length")
+    imprimirTitulo(".lenght"); 
+    let frutas  = ["Pera", "Uva", "Manzana", "Platano"];
+    imprimirContenido('Variable original: let frutas  = ["Pera", "Uva", "Manzana", "Platano"]; ')
+    imprimirContenido( "El contenido para frutas.length  es: " + frutas.length); // -> 4
+
+    frutas[5] = "Mamey";
+    imprimirContenido( "El contenido para  frutas.length es (se agrego un elemento más): " + frutas.length); // -> 6
+
+    imprimirContenido( "El contenido para frutas es: " + frutas); 
+    
+    imprimirContenido( "El contenido para frutas[3] es: " + frutas[3]); 
+    imprimirContenido( "El contenido para frutas[4] es: " + frutas[4]);
+    imprimirContenido( "El contenido para frutas[5] es: " + frutas[5]); 
+
+    //indexOf
+    imprimirTitulo(".indexOf('elemento_a_buscar')"); 
+    imprimirContenido("Regresará la posición de la  primera coincidencia del elemento buscado."); 
+   
+    let nombres = ["Katy", "Kari", "Misa", "Leo"];
+    imprimirContenido('Variable original: let nombres = ["Katy", "Kari", "Misa", "Leo"]; ')
+    imprimirContenido("El contenido para  nombres.indexOf('Misa')  es: " + nombres.indexOf("Misa")); // -> 2
+    imprimirContenido("El contenido para  nombres.indexOf('Leo')  es: " + nombres.indexOf("Leo")); // -> 2
+        //Se muestra un -1 por que no existe. 
+    imprimirContenido("El contenido para nombres.indexOf('Victor')  es: " + nombres.indexOf("Victor")); // -> -1
+
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+</script>

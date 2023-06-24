@@ -1,0 +1,111 @@
+<!-- 
+
+    Nombre del programa archivo: 42-time_timeEnd.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: console.time-> we indicate where to start the time measurement 
+                 console.timeEnd->we end the measurement
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time and timeEnd</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+     function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+
+        }
+
+
+//time(label) & timeEnd(label)
+
+       imprimirTitulo("time & timeEnd"); 
+       imprimirContenido("Revisar la consola en el navegador para ver los métodos. "); 
+       imprimirNotas("Nota:Se utiliza para medir en cuanto tiempo se")
+        let part = 0;
+
+        //console.time-> we indicate where to start the time measurement. 
+        console.time('Leibniz');
+
+        for (let k = 0; k < 10000000; k++) {
+            part = part + ((-1) ** k) / (2 * k + 1);
+        }
+
+        console.timeEnd('Leibniz'); //console.timeEnd->we end the measurement. 
+        
+        let pi = part * 4;
+
+        console.log(pi); // -> 3.1415925535897915
+
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/API/Console/timeEnd
+
+
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>
+            

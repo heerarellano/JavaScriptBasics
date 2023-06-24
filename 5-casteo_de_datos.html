@@ -1,0 +1,168 @@
+<!-- 
+    Nombre del archivo: 5-casteo_de_datos.html. 
+    Copyright:  FAHJ
+    Autor:  Francisco Arellano Herdson Josué
+    Fecha : 03/06/2022
+    Versión:  1.0
+    Descripción: Mostrar el uso de casteo de datos para cambiar los datos. 
+
+ -->
+
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Casteo de datos (String, Number, Boolean, parseInt, paseFloat)</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+    /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1.
+        Nota: Esta es mi versión  del código proporcionado por CISCO-NETWORKING-ACADEMY-Java Script Essentials. 
+ 
+    */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    }
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+//Casteo de datos 
+
+        //Se pueden utilizar sin argumentos debido a que regresan un valor default: String->" ",  Number-> 0, Boolean->0
+        // BigInt->Se le debe de dar un valor inicial. 
+
+        const cadena = String();
+        const numero = Number();
+        const booleano = Boolean();
+
+        //Métodos para castear Objetos .parseInt() y .parseFloat
+
+    
+        imprimirTitulo("Casteo de datos (String, Number, Boolean, parseInt, paseFloat)")
+        imprimirTitulo("Casteo de datos (valores default)"); 
+        //En este caso utilice cadena.replace("", "''") para que mostará que String devuelve un caracter en blanco. 
+        imprimirContenido("El valor default para const cadena = String()  es: "+ String(cadena.replace("", "' '"))); // ->
+        imprimirContenido("El valor default para const numero = Number() es: "+ numero); // -> 0
+        imprimirContenido("El valor default para  const booleano = Boolean() es: "+ booleano); // -> false
+        
+        const big1 = BigInt(42);
+        console.log(big1); // -> 42n
+        
+        //Const big2 = BigInt();   // -> Uncaught TypeError: Cannot convert undefined to a BigInt
+
+
+
+        imprimirTitulo("Casteando Con Diferentes Datos"); 
+        const enteroAcadena = String(numero);
+        const enteroAcadena2 = String(10);
+        const booleanAcadena = String(true);
+        const cadenaAnumero= Number("234");
+        const boolFromNumber = Boolean(0);
+
+        imprimirContenido("El contenido para (enteroAcadena = String(numero))  es : " + enteroAcadena); 
+        imprimirContenido("El contenido para (enteroAcadena2 = String(8))  es : "  +  enteroAcadena2); 
+        imprimirContenido("El contenido para (booleanAcadena = String(true))  es : " + booleanAcadena); 
+        imprimirContenido("El contenido para (cadenaAnumero = Number('312') ) es :  "  +  cadenaAnumero); 
+        imprimirContenido("El contenido para (numeroAboolean = Boolean(0) ) es : "  + boolFromNumber); 
+
+
+
+        //Casteo de datos con Number. 
+        imprimirTitulo("Casteo De Datos Con Number"); 
+        console.log(Number(42)); // -> 42
+
+        imprimirContenido("El contenido para  (Number('11'))  es: " + Number('11') ); // -> 11
+        imprimirContenido("El contenido para (Number('0x11') ) es: " + Number('0x11')); // -> 17
+        imprimirContenido("El contenido para  (Number('0o11'))  es: " + Number('0o11')); // -> 9
+        imprimirContenido("El contenido para (Number('0b11') ) es: " + Number('0b11')); // -> 3
+        imprimirContenido("El contenido para  (Number('12e3') ) es: " + Number('12e3')); //  -> 12000
+        imprimirContenido("El contenido para (Number('Infinity'))  es: " + Number('Infinity'));// -> Infinity
+        imprimirContenido("El contenido para (Number('text') ) es: " + Number('text')); // -> NaN
+
+        imprimirContenido("El contenido para (Number(14n)) es: " + Number(14n)); // -> 14
+        imprimirContenido("El contenido para (Number(123456789123456789123n)) es: " + Number(123456789123456789123n)); // - >  123456789123
+      
+
+        imprimirContenido("El contenido para (Number(true)) es: " + Number(true)); // -> 1
+        imprimirContenido("El contenido para (Number(false)) es: " + Number(false)); // -> 0
+
+        imprimirContenido("El contenido para (Number(undefined)) es: " + Number(undefined)); //  -> NaN
+
+        imprimirContenido("El contenido para (Number(null)) es: " + Number(null));// -> 0
+
+
+        //Casteo de datos con Boolean.
+        imprimirTitulo("Casteo De Datos Con Boolean"); 
+        imprimirContenido("El contenido para (Boolean(true)) ) es: " + Boolean(true)); // -> true
+        imprimirContenido("El contenido para (Boolean(42) ) es: " + Boolean(42)); // -> true
+        imprimirContenido("El contenido para (Boolean(0) ) es: " + Boolean(0)); // -> false
+        imprimirContenido("El contenido para (Boolean(NaN)) es: " + Boolean(NaN)); // -> false
+
+        imprimirContenido("El contenido para (Boolean('text') ) es: " + Boolean("text")); // -> true
+        imprimirContenido("El contenido para (Boolean('') ) es: " + Boolean("")); // -> false
+        imprimirContenido("El contenido para ( Boolean(undefined)) es: " + Boolean(undefined)); // -> false
+        imprimirContenido("El contenido para (Boolean(null)) es: " + Boolean(null)); // -> false 
+
+
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion
+        
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+
+</script>

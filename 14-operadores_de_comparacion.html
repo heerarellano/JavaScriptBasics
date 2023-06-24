@@ -1,0 +1,121 @@
+<!-- 
+
+    Nombre del programa archivo: 14-operadores_de_comparación.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso de los siguientes operadores de comparación: ===,!==, <=, >= , > y  <. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Operadores  de comparación</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+
+        function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+//Operadores de comparación: ===,!==, <=, >= , > y  <. 
+
+        imprimirTitulo("Operadores De Comparación"); 
+
+        //Estrictamente igual ===. 
+        imprimirContenido("<h2>Estrictamente igual (===)  </h2>"); 
+        imprimirContenido("El contenido para (0 == false) es : " + (0 == false)); //->True
+        imprimirContenido("El contenido para (0 === false) es : " + (0 === false)); //->False
+        imprimirContenido("<br>")
+        //Estrictamente desigual !==. 
+        imprimirContenido("<h2>Estrictamente desigual !== </h2>"); 
+        imprimirContenido("El contenido para (10 !== 5) es : " + (10 !== 5)); // -> true
+        imprimirContenido("El contenido para (10 !== 10) es : " + (10 !== 10)); // -> false
+        imprimirContenido("El contenido para  (10 !== 10n) es : " + (10 !== 10n)); // -> true
+        imprimirContenido("El contenido para (10 !== '10') es : " + (10 !== "10")); // -> true
+        imprimirContenido("<br>")
+        //Mayor igual >= , menor igual <= , mayor que > y menor que <.
+        imprimirContenido("<h2>Mayor igual, menor igual, mayor y menor que.</h2>"); 
+        //mayor que >
+        imprimirContenido("<h3>Mayor que '>'</h3>"); 
+        imprimirContenido("El contenido para (10 > 100)  es :  " + (10 > 100)); // -> false
+        imprimirContenido("El contenido para (101 > 100)  es :  " + (101 > 100)); // -> true
+        imprimirContenido("El contenido para (101 > '100')  es :  " + (101 > '100')); // -> true
+       
+        imprimirContenido("<h3>Menor que '<'</h3>"); 
+        imprimirContenido("El contenido para  (101 < 100)  es :  " + (101 < 100)); // -> false
+        imprimirContenido("El contenido para (100n < 102)  es :  " + (100n < 102))     ; // -> true
+        imprimirContenido("El contenido para ('10' < 20n) es :  " + ('10' < 20n)); // -> true
+ 
+        imprimirContenido("Menor igual '<='"); 
+        imprimirContenido("El contenido para (101 <= 100)  es :  " + (101 <= 100)); // -> false
+        imprimirContenido("El contenido para ('10' <=  20)  es :  " + ('10' <=  20)); // -> true
+        imprimirContenido("Mayor igual '>='"); 
+        imprimirContenido("El contenido para (10 >= 10n)  es :  " + (10 >= 10n)); // -> true
+          /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Equality?adlt=strict&toWww=1&redig=292C8F5E370B406296496DAE99277881
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>

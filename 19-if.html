@@ -1,0 +1,89 @@
+<!-- 
+
+    Nombre del programa archivo: 19-if.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso de la estructura condicional if. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>if</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+        /*
+                Nombre de la función: imprimirContenido. 
+                Copyright: FAHJ
+                Autor: Francisco Arellano Herdson Josué
+                Fecha: 01/06/2022
+                Versión: 1.0
+                Parámetros: 
+                    por valor: 
+                        mensaje: Es un string pasado por valor para imprimir el contenido
+                Descripción: Imprimira en html un título con el formato h3. 
+        */
+        function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        }
+
+        
+    //if 
+        let usuarioListo = confirm("Estas tiste");
+        console.log(usuarioListo);
+        if(usuarioListo) {
+            alert("Usuario triste!");
+
+        /*else if(condition...n){
+            ...
+            }*/
+
+        }else{
+            alert("Usuario no triste. :D")
+        }  
+
+
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else?adlt=strict&toWww=1&redig=8EB09ADBCF394B289502FA127A04C807
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+
+</script>

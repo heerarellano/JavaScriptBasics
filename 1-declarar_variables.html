@@ -1,0 +1,172 @@
+<!--
+
+    Nombre del programa archivo: 1-declarar_variables.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizarán  las diferentes entre las formas de declarar variables en JavaScript
+    con: let, var y const. 
+
+-->
+	 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarar variables (var, let, const)</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    /*
+        Notas sobre el lenguaje JS. 
+
+            1-No toma en cuenta la sangría, saltos de línea 
+            o espacios en blanco, el intérprete lo ignorará. 
+
+            2-Es sensitive case. 
+
+            3-No es un lenguaje tipado. 
+
+            4-No es obligatorio poner el terminador de sentencias ';', pero se recomienda, como buena práctica.
+
+            5-Es server-side, por lo que: 
+                -No permite la escritura en archivos del servidor. 
+                -No puede leer información de otras páginas web abiertas.
+                -No puede cerrar otras páginas que el no abrió.
+    */
+
+
+//Definición de funciones para imprimir en HTML. 
+   
+   /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+  function imprimirTitulo(mensaje){
+       
+       document.write("<h1><b>" + mensaje + "</b></h1>"); 
+       document.write("\n"); 
+       
+    }
+    
+    /*
+    Nombre de la función: imprimirContenido. 
+    Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    }
+        
+
+    
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+        
+
+
+
+// var, let y const. 
+
+    imprimirTitulo("Declarar variables (var, let, const)")
+    
+    /*  
+    var 
+            Mutable: Si. 
+            Palabra resevada: var. 
+            Se debe inicializar: Es opcional. 
+            Valor default: undefined. 
+            Múltiples variables con el mismo nombre(redefinir): Si. 
+            Hoisting: Si (aplica también para funciones declaradas con var), el concepto hoisting se analizará más adelante.
+            Scope: Es visible  dentro y fuera  de los code blocks { }, es decir que es una variable global.
+            Nota: Las siguientes formas para declarar variables son equivalentes. 
+                var x = 0 
+                x=0
+    */
+
+    imprimirTitulo("var"); 
+    var saludo = "Hola estoy utilizando var en esta variable. :D"
+    imprimirContenido(saludo); 
+    imprimirNotas("Nota: permite múltiples variables con el mismo nombre, el default es undefined, tiene hoisting y es visible dentro<br>"); 
+    imprimirNotas("y fuera de los code blocks."); 
+
+    /*
+        let 
+            Mutable: Si. 
+            Palabra resevada: let. 
+            Se debe inicializar:Es opcional. 
+            Valor default: no se asigna default. 
+            Múltiples variables con el mismo nombre (redefinir): No.
+            Hoisting: No. 
+            Scope: Únicamente dentro de los code blocks { }.
+            Nota: Se recomiendo utilizar let debido a que no permite redefinir una variable ya existente.
+     */
+
+     let segundoSaludo = "Hola ¿Cómo estas? esta es una variable con <bold>let</b>. :D"
+     imprimirTitulo("let"); 
+     imprimirContenido(segundoSaludo); 
+     imprimirNotas("Nota: Se debe inicializar, no tiene hoisting, no se puede re definir y es visible únicamente dentro de los code blocks."); 
+    
+      /*
+        const
+            Mutable: No. 
+            Palabra resevada: const. 
+            Se debe inicializar: Si. 
+            Valor sefault: error (no se asigna default). 
+            Múltiples variables con el mismo nombre(redefinir): No. 
+            Hoisting: No. 
+            Scope: Únicamente dentro de los code blocks { }. 
+      */    
+     
+      imprimirTitulo("const");
+      const PI = 3.1416
+      imprimirContenido("Hola estoy utilizando const para la constante PI=" + PI);  
+      imprimirNotas("Nota: Se utiliza para declarar constantes.");
+        
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/var
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/let
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/const
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+      
+</script>

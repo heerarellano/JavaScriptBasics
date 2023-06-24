@@ -1,0 +1,120 @@
+<!-- 
+
+    Nombre del programa archivo: 20-switch. 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción:En este documento se analizará el uso de la estructura condicional switch.
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>switch</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+
+    /* Switch robusto */
+    var primerNumero = Number(prompt("Ingresa un número: ")); 
+    var segundoNumero = Number(prompt("Ingresa otro número: "))
+    var opcion = prompt("Selecciona una operacion: Suma S, Resta R, Multiplicación M");
+    var resultado = 0; 
+    
+    switch (opcion) {
+        case "Suma":
+        case "suma":
+        case "s":
+        case "S":
+            resultado = primerNumero +  segundoNumero; 
+            break;
+        case "Resta":
+        case "resta":
+        case "R":
+        case "r":
+          resultado = primerNumero  - segundoNumero; 
+          break;
+        case "Multiplicación":
+        case "multiplicación":
+        case "m":
+        case "M":
+            resultado = primerNumero  * segundoNumero; 
+            break;
+        default: //No lleva break
+            alert("Opción no válida " + String(opcion));
+    }
+
+    window.alert("El resultado es: " + resultado)
+        
+        /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else?adlt=strict&toWww=1&redig=8EB09ADBCF394B289502FA127A04C807
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+        
+</script>

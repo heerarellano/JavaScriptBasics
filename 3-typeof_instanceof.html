@@ -1,0 +1,134 @@
+<!-- 
+
+    Nombre del programa archivo: 3-typeof_instanceof.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 01/06/202
+	Versión: 1.0
+	Descripción: En este documento se analizará de typeof para determinar de que tipo de dato es una variable e instanceof 
+    para determinar si una variable es instancia de una determinada clase. 
+ -->
+
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof & instanceof</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   
+//Definición de funciones para escribir en HTML. 
+   /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+        
+  
+    
+    }
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+//typeof & instanceof
+    imprimirTitulo("typeof & instanceof"); 
+
+    // typeof -> Devuelve un string de un tipo de dato que es una variable. 
+
+    imprimirTitulo("typeof")
+    let year = 1990;
+    imprimirContenido("Tipo de dato para (let year = 1990):  " + typeof(year)); // -> number
+    imprimirContenido("Tipo de dato para (1991) :  " + typeof 1991); // -> number
+    imprimirContenido("<br>"); 
+
+    let name = "Alice";
+    imprimirContenido("Tipo de dato para (let name = 'Alice') :" + typeof name); // -> string
+    imprimirContenido("Tipo de dato para (typeof 'Bob') :  " + typeof "Bob"); // -> string
+    imprimirContenido("<br>"); 
+    
+    let typeOfYear = typeof year;
+    imprimirContenido("Tipo de dato para (let typeOfYear = typeof year) :   " + typeOfYear); // -> number
+    //Es estring por que la variable anterior capturo "number". 
+    imprimirContenido("Tipo de dato para (typeof typeOfYear) : " + typeof typeOfYear); // -> string
+    imprimirNotas('Notas: Es estring por que la variable anterior capturo "number"'); 
+    imprimirNotas("typeof: permite determinar que tipo de dato es una variable."); 
+
+
+    //instanceof->Devuelve un booleano. 
+    imprimirTitulo("instanceof"); 
+    let dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    let dia = "Sábado";
+
+    let  instanciaDeDias = dias instanceof Array;
+    let  instanciaDeDia= dia instanceof Array;  
+      
+    imprimirContenido('let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];')
+    imprimirContenido('let day = "Sunday";')
+    imprimirContenido("El contenido para  dia instanceof Array  es: " + instanciaDeDia); // -> false
+    imprimirContenido("El contenido para dias instanceof Array  es: " +  instanciaDeDias); // -> true
+    imprimirNotas("instanceof: permite determinar su una variable es instancia de una clase, siempre devuelve un booleano"); 
+    
+
+        
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/typeof
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/instanceof
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+   
+</script>
+

@@ -1,0 +1,170 @@
+<!-- 
+
+    Nombre del programa archivo: 11-operaciones_basicas.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los operadores ariméticos segundoNumero compund operands (asignaciones rápidas) en JS
+                 asignación de anulación lógica segundoNumero asignaciones bit a bit.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="primerNumero-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Operaciones básicas</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+
+//Definición de funciones. 
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h1. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+
+
+
+    /*
+    Nombre de función: imprimirNotas
+    Copyright: FAHJ
+    Autor: Francisco Arellano Herdson Josué
+    Fecha: 03/06/2022
+    Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+    Parámetros: 
+        por valor: 
+            mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+
+    function imprimirNotas(mensaje){
+    document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+//Operadores ariméticos segundoNumero compund operands aritméticos segundoNumero  compund operands Booleanos. 
+
+    var  primerNumero = 5;
+    var  segundoNumero = 2;
+
+    imprimirTitulo("Operadores ariméticos segundoNumero compund operands (asignaciones rápidas)"); 
+    imprimirTitulo("Operadores ariméticos"); 
+    imprimirContenido("primerNumero: " + primerNumero); 
+    imprimirContenido("segundoNumero: " + segundoNumero); 
+    imprimirContenido(`Suma (${primerNumero} + ${segundoNumero}) : ` + (primerNumero  +  segundoNumero)); // -> 7
+    imprimirContenido(`Resta (${primerNumero} - ${segundoNumero}) : ` + ( primerNumero - segundoNumero)); // -> 3
+    imprimirContenido(`Multiplicación (${primerNumero} * ${segundoNumero}) : ` + ( primerNumero * segundoNumero)); // -> 10
+    imprimirContenido(`division (${primerNumero} / ${segundoNumero}) : ` + ( primerNumero / segundoNumero)); // -> 2.5
+    imprimirContenido(`Módulo (${primerNumero} % ${segundoNumero} ) : ` +  (primerNumero % segundoNumero)); // -> 1
+    imprimirContenido(`Exponente (${primerNumero} ** ${segundoNumero}) : ` + ( primerNumero ** segundoNumero)); // -> 25
+
+    //Compound Assignment arithmetics
+    imprimirTitulo("Compound Assignment arithmetics"); 
+    var primerNumero = 10;
+    
+    imprimirContenido("primerNumero : " + primerNumero); 
+    primerNumero += 2;
+    imprimirContenido("primerNumero += 2 :  " + primerNumero); // -> 12
+    primerNumero -= 4;
+    imprimirContenido("primerNumero -= 4 : " + primerNumero); // -> 8
+    primerNumero *= 3;
+    imprimirContenido("primerNumero *= 3 : " + primerNumero); // -> 24
+    primerNumero /= 6;
+    imprimirContenido("primerNumero /= 6 : " + primerNumero); // -> 4
+    primerNumero **= 3;
+    imprimirContenido("primerNumero **=3 : " + primerNumero); // -> 64
+    primerNumero %= 10;
+    imprimirContenido("primerNumero %= 10 : " + primerNumero); // -> 4
+    
+    //Compound Assignment Booleans"
+    imprimirTitulo("Compound Assignment Booleans"); 
+    let a = true;
+    imprimirContenido("a: " + a); 
+    imprimirContenido("El contenido para (a) es : " + a); // -> true
+    a &&= false;
+    imprimirContenido("El contenido para (a &&= false) es : " + a); // -> false
+    a = true
+    imprimirContenido("a = true")
+    imprimirContenido("a: " + a); 
+    a ||= false;
+    imprimirContenido("El contenido para (a ||= false) es : " + a); // -> false
+
+    //Otro tipo de asignaciones: Negación lógica segundoNumero asignaciones bit a bit. 
+    imprimirTitulo("Negación lógica segundoNumero asignaciones bit a bit."); 
+
+    var primerNumero = 14;
+    var segundoNumero = null;
+    var tercerNumero = 15;
+    
+    imprimirContenido("primerNumero :  " + primerNumero); 
+    imprimirContenido("segundoNumero :  " + segundoNumero); 
+    imprimirContenido("tercerNumero :  " + tercerNumero); 
+    
+
+    //El contenido únicamente se asigna si  la variable del lado izquierdo es null  undefined. 
+
+    //El valor de primerNumero no cambia por que no es null. 
+    primerNumero ??= tercerNumero;
+    
+    // El valor de  segundoNumero será cambiado por que es null. 
+
+    segundoNumero ??= tercerNumero;
+
+    imprimirContenido("El conenido para (primerNumero ??= tercerNumero) esto es igual a (primerNumero ?? (primerNumero = tercerNumero)) cuyo  valor es : " + primerNumero)    // 14
+    imprimirContenido("El conenido para (segundoNumero ??= tercerNumero) esto es igual a (segundoNumero ?? (segundoNumero = tercerNumero)) entonces (segundoNumero) es : " + segundoNumero)      // 15
+    imprimirNotas("Asignación de anulación lógica. "); 
+    //JS ve a los datos como un se de 32 bits en lugar de bigInt o hexadecimales. 
+    imprimirContenido("<h2>Desplazamiento de bits</h2>"); 
+    imprimirContenido("Desplamiento de bit a la derecha : primerNumero >>= segundoNumero "); 
+    imprimirContenido("Desplamiento de bit a la izquierda : primerNumero <<= segundoNumero "); 
+    imprimirContenido("<h2>Asignaciones bit a bit</h2>"); 
+    imprimirContenido("Asignación AND bit a bit primerNumero &= segundoNumero"); 
+    imprimirContenido("Asignación OR bit a bit  primerNumero |= segundoNumero"); 
+    imprimirContenido("Asignación XOR bit a bit  primerNumero ^= segundoNumero"); 
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators?adlt=strict&toWww=1&redig=E9AD5E92A8BF485882A31EDDD65669DA
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+    </script>

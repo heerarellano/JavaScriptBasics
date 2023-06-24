@@ -1,0 +1,97 @@
+<!-- 
+
+    Nombre del programa archivo: 38-range_error.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: Mostrar de range error al intentar acceder a una posición del arreglo que no existe.
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range error</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+        function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+    
+        }
+
+//Range error. 
+        imprimirTitulo("Range error"); 
+        let arreglo = Array(6);
+        imprimirContenido("El contenido para arreglo.length es :  " + arreglo.length); // -> 10
+        //No podemos acceder a la última posición de un arreglo que no existe. 
+        let segundoArreglo = Array(-1); // -> Uncaught RangeError: Invalid array length
+        imprimirContenido("El contenido para segundoArreglo.length es :" + segundoArreglo.length);
+        
+        
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RangeError
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+       
+</script>

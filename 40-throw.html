@@ -1,0 +1,133 @@
+<!-- 
+
+    Nombre del programa archivo: 40-throw
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha:  06/06/2022
+	Versión: 1.0
+	Descripción: throw statement enviará una expción (creada por el programador ) de acuerdo a un 
+                    valor seguido de la declaración ejemplo throw 100; // -> Uncaught 100. 
+
+        
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throw statement</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+       /*
+           Nombre de función: imprimirTitulo
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué 
+           Fecha: 01/06/2022
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el título en html. 
+           Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+       }
+
+   /*
+           Nombre de la función: imprimirContenido. 
+           Copyright: FAHJ
+           Autor: Francisco Arellano Herdson Josué
+           Fecha: 01/06/2022
+           Versión: 1.0
+           Parámetros: 
+               por valor: 
+                   mensaje: Es un string pasado por valor para imprimir el contenido
+           Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+           
+           document.write("<h3>" + mensaje + "</h3>"); 
+       
+       }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+   
+        function imprimirNotas(mensaje){
+
+            document.write("<h4>" + mensaje + "</h4>"); 
+
+        }
+
+//throw 
+        //Creará una excepción, el programador puede crear la excepción para el tipo de error que desee. 
+       imprimirTitulo("throw new"); 
+       /*
+       imprimirContenido("start"); // -> start
+       imprimirContenido("El valor para (throw 100;) es : Uncaught 100 ")
+       throw 100; // -> Uncaught 100
+       console.log("end");
+       */
+
+       //Aquí el bloque catch tomará la excepción.
+       /*
+       console.log("start"); // -> start
+        try {
+            throw 100;
+        } catch (error) {
+            console.log(error); // -> 100
+        }
+        console.log("end"); // -> end
+        */
+
+
+
+       //Creando una nueva excepción sí se excede el valor. 
+
+       function factorial(n) {
+        if (n > 30) {
+            throw new RangeError("Valor máximo 30");
+        }
+        let result = 1;
+        for (; n > 1; n--) {
+            result = result * n;
+        }
+        return result;
+        }
+
+        imprimirContenido(factorial(6)); // -> 2432902008176640000
+        imprimirContenido("El valor para (factorial(1000)) es : Uncaught RangeError:Valor máximo 30 ")
+        imprimirContenido(factorial(1000)); // -> Uncaught RangeError: Max value 20
+
+        
+
+
+    
+         /***Referencias***/
+        /*
+            Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+            desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+            https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/throw
+
+            
+            Cisco Networking Academy 
+            https://www.netacad.com/es/courses/programming/javascript-essentials-1
+        */
+</script>

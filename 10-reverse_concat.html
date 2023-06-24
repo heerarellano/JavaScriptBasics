@@ -1,0 +1,133 @@
+<!-- 
+
+    Nombre del programa archivo: 10-reverse_concat_slice.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 03/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los métodos reverse->los datos del array se invertirán , 
+    slice para obtener partes de un  array y concat para unir arrays.  
+
+ -->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Reverse & concat</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones
+
+     /*
+        Nombre de función: imprimirTitulo
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué 
+        Fecha: 01/06/2022
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el título en html. 
+        Descripción: Imprimira en html un título con el formato h2. 
+   */
+
+   function imprimirTitulo(mensaje){
+       
+       document.write("<h1>" + mensaje + "</h1>"); 
+       document.write("<br>"); 
+
+    }
+
+   /*
+        Nombre de la función: imprimirContenido. 
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 01/06/2022
+        Versión: 1.0
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir el contenido
+        Descripción: Imprimira en html un título con el formato h3. 
+   */
+   function imprimirContenido(mensaje){
+        
+        document.write("<h3>" + mensaje + "</h3>"); 
+    
+    
+    }
+   
+
+    /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+    */
+   
+    function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+    }
+
+
+//contat & reverse & slice. 
+
+    imprimirTitulo("concat & reverse & slice"); 
+    //concat(array)->Une dos arrays. 
+    imprimirTitulo(".concat(array_a_concatenar)"); 
+    let nombres = ["Katy", "Kari", "Misa", "Leo"];
+    let nuevosNombres = ["Teresa", "Elian"];
+    let nombresCompletos = nombres.concat( nuevosNombres);
+    imprimirContenido('variable original : let nombres = ["Katy", "Kari", "Misa", "Leo"];')
+    imprimirContenido('variable original : let nuevosNombres = ["Teresa", "Elian"];')
+    imprimirContenido('variable original : let nombresCompletos = nombres.concat( nuevosNombres);')
+    imprimirContenido("El contenido para (nuevosNombres ) es: " + nuevosNombres); // -> ["Teresa", "Elian"]
+    imprimirContenido("El contenido para (nombres ) es: " + nombres); // -> ["Olivia", "Emma", "Mateo","Samuel"]
+    imprimirContenido("El contenido para (nombresCompletos = nombres.concat( nuevosNombres)) es: " + nombresCompletos); // -> ["Olivia", "Emma", "Mateo","Samuel", "Teresa", "Elian"]
+
+    //.reverse()->Invierte el orden de los elementos en un array. 
+    imprimirTitulo(".reverse()")
+    let nombresReverse = ["Katy", "Kari", "Misa", "Leo"];
+    imprimirContenido('variable original:  let nombresReverse = ["Katy", "Kari", "Misa", "Leo"];')
+    imprimirContenido("El contenido para nombresReverse (array original) es: " + nombresReverse); // -> ["Samuel", "Mateo", "Emma","Olivia"]
+    nombresReverse.reverse();
+    imprimirContenido('nombresReverse.reverse()'); 
+    imprimirContenido("El contenido para nombresReverse(array con reverse) es: " + nombresReverse); // -> ["Samuel", "Mateo", "Emma","Olivia"]
+
+    //.slice (inicio_incluyente, final_excluyente)
+    imprimirTitulo(".slice(inicio_incluyente, final_excluyente)"); 
+    let sliceNombres = ["Katy", "Kari", "Misa", "Leo"];
+    imprimirContenido('variable original: let sliceNombres = ["Katy", "Kari", "Misa", "Leo"]')
+    imprimirContenido("El array original es: " + sliceNombres); 
+    //nota: sí le indicas el final, toma desde el inicio hasta el final como en la variable n1.
+    let n1 = sliceNombres.slice(2);
+    imprimirContenido("El contenido para  (let n1 = sliceNombres.slice(2))  es: " + n1); // -> ["Mateo", "Samuel"]
+    //El 3 es excluyente por lo tanto no lo toma en cuenta. 
+    let n2 = sliceNombres.slice(1,3);
+    imprimirContenido("El contenido para  (n2 = sliceNombres.slice(1,3))  es: " + n2); // -> ["Emma", "Mateo"]
+    //El -1 es excluyente por lo tanto no lo toma en cuenta. 
+    let n3 = sliceNombres.slice(0, -1);
+    imprimirContenido("El contenido para (sliceNombres.slice(0, -1) ) es: " + n3); // -> ["Olivia", "Emma", "Mateo"]
+
+    let n4 = sliceNombres.slice(-1);
+    imprimirContenido("El contenido para (sliceNombres.slice(-1))  es: " + n4); // -> ["Samuel"]
+
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse?adlt=strict&toWww=1&redig=5F67C3964C8A4870AE3E10F397CADDA4
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?adlt=strict&toWww=1&redig=984FEDEC5A704512B3CA22641FBC3E5D
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+</script>

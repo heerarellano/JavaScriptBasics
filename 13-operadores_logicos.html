@@ -1,0 +1,141 @@
+<!-- 
+
+    Nombre del programa archivo: 13-operadores_logicos.html 
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los operadores lógicos, AND, OR y NOT. 
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Operadores lógicos</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+
+    /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h2. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+        /*
+                Nombre de la función: imprimirContenido. 
+                Copyright: FAHJ
+                Autor: Francisco Arellano Herdson Josué
+                Fecha: 01/06/2022
+                Versión: 1.0
+                Parámetros: 
+                    por valor: 
+                        mensaje: Es un string pasado por valor para imprimir el contenido
+                Descripción: Imprimira en html un título con el formato h3. 
+        */
+        function imprimirContenido(mensaje){
+                
+                document.write("<h3>" + mensaje + "</h3>"); 
+            
+            }
+
+        /*
+            Nombre de función: imprimirNotas
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 03/06/2022
+            Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+        function imprimirNotas(mensaje){
+            document.write("<h4>" + mensaje + "</h4>"); 
+        }
+//Operadores lógicos AND, OR and NOT. 
+
+
+        //AND 
+        imprimirTitulo("Operadores lógicos AND, OR  and NOT"); 
+        imprimirTitulo("AND"); 
+        imprimirContenido("El contenido para (true && true)  es :  " + (true && true)); // -> true
+        imprimirContenido("El contenido para (true && false)  es :  " + (true && false)); // -> false
+        imprimirContenido("El contenido para  (false && true)  es :  " + (false && true)); // -> false
+        imprimirContenido("El contenido para (false && false)  es :  " + (false && false)); // -> false
+        imprimirNotas("Nota: 'Requiere exactamente dos bits encendidos para devolver verdadero'. ")
+
+        imprimirTitulo("AND Siempre regresará el primer operando si evalua falso, y el segundo operando de lo contrario."); 
+        imprimirContenido("El contenido para (true && 1991) es :  " + (true && 1991)); // -> 1991
+        imprimirContenido("El contenido para (false && 1991) es :  " + (false && 1991)); // -> false
+        imprimirContenido("El contenido para (2 && 5) es :  " + (2 && 5)); // -> 5
+        imprimirContenido("El contenido para (0 && 5) es :  " + (0 && 5)); // -> 0
+        imprimirContenido("El contenido para ('Alice' && 'Bob') es :  " + ("Alice" && "Bob")); // -> Bob
+        imprimirContenido("El contenido para (' ' && 'Bob') es :  " + ("" && "Bob")); // -> empty string
+
+        
+        imprimirTitulo("AND"); 
+        let x = 0;
+        let y = 0;
+        imprimirContenido("La variable original x es:" + x ); // -> 0
+        imprimirContenido("La variable original y es:" + y); // -> 0
+        imprimirContenido("El contenido para (x++ && y++) es: " + (x++ && y++)); // -> 0
+        imprimirContenido("El contenido para x es: " + x); // -> 1
+        imprimirContenido("El contenido para y es: " + y); // -> y == 0
+        imprimirNotas("Nota: el segundo operando nunca se ejecutará, por que el primero se evaluó como falso, por lo tanto se ejecutó. "); 
+
+        //OR
+        imprimirTitulo("OR"); 
+        imprimirContenido("El contenido para (true || true)  es :  " + (true || true)); // -> true
+        imprimirContenido("El contenido para (true || false)  es :  " + (true || false)); // -> true
+        imprimirContenido("El contenido para  (false || true)  es :  " + (false || true)); // -> true
+        imprimirNotas("Nota: 'Requiere al menos un bit encendido para devolver verdadero'.")
+        imprimirTitulo("OR Siempre regresará el primer operando si se evalua verdadero, y el segundo de lo contrario."); 
+        imprimirContenido("El contenido para (true || 1991)  es : " + (true || 1991)); // -> true
+        imprimirContenido("El contenido para (false || 1991)  es : " + (false || 1991)); // -> 1991
+        imprimirContenido("El contenido para  (2 || 5)  es : " + (2 || 5)); // -> 2
+        imprimirContenido("El contenido para (0 || 5)  es : " + (0 || 5)); // -> 5
+        imprimirContenido("El contenido para ('Alice' || 'Bob')  es : " + ("Alice" || "Bob")); // -> Alice
+        imprimirContenido("El contenido para  ('' || 'Bob')  es : " + ("" || "Bob")); // -> Bob
+        imprimirContenido("El contenido para false || false  es :  " + (false || false)); // -> false
+        imprimirNotas("Nota: ! AND y OR -> siempre regresarán uno de los valores antes o después de utilizar estos valores lógicos, no necesariamente devolverá un valor booleano."); 
+        
+        //NOT
+        imprimirTitulo("NOT"); 
+        imprimirContenido("El contenido para (!true)  es :  " + !true); // -> false
+        imprimirContenido("El contenido para (!false)  es :  " + !false); // -> true
+        imprimirNotas("Nota: ! NOT -> siempre regresará un valor booleano."); 
+
+
+        
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR?adlt=strict&toWww=1&redig=9C8A55663A8A44B48AA3F5E4D212A471
+
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+        
+</script>

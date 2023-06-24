@@ -1,0 +1,124 @@
+<!-- 
+
+    Nombre del programa archivo: 12-incrementos_y_decrementos_en_uno.html
+	Autor: Francisco Arellano Herdson Josué. 
+	Fecha: 06/06/2022
+	Versión: 1.0
+	Descripción: En este documento se analizará el uso de los incrementos y decrementos en uno en JS. 
+
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Incrementos y decrementos</title>
+ </head>
+ <body>
+     
+ </body>
+ </html>
+ <script>
+//Definición de funciones. 
+        /*
+            Nombre de función: imprimirTitulo
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué 
+            Fecha: 01/06/2022
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el título en html. 
+            Descripción: Imprimira en html un título con el formato h1. 
+    */
+
+    function imprimirTitulo(mensaje){
+        
+        document.write("<h1>" + mensaje + "</h1>"); 
+        document.write("<br>"); 
+
+        }
+
+    /*
+            Nombre de la función: imprimirContenido. 
+            Copyright: FAHJ
+            Autor: Francisco Arellano Herdson Josué
+            Fecha: 01/06/2022
+            Versión: 1.0
+            Parámetros: 
+                por valor: 
+                    mensaje: Es un string pasado por valor para imprimir el contenido
+            Descripción: Imprimira en html un título con el formato h3. 
+    */
+    function imprimirContenido(mensaje){
+            
+            document.write("<h3>" + mensaje + "</h3>"); 
+        
+        
+        }
+
+
+
+        /*
+        Nombre de función: imprimirNotas
+        Copyright: FAHJ
+        Autor: Francisco Arellano Herdson Josué
+        Fecha: 03/06/2022
+        Descripción: Función que permite imprimir la descripción del elemento a analizar. 
+        Parámetros: 
+            por valor: 
+                mensaje: Es un string pasado por valor para imprimir notas o comentarios con el formato <h4></h4>. 
+        */
+
+        function imprimirNotas(mensaje){
+        document.write("<h4>" + mensaje + "</h4>"); 
+        }
+
+//Incrementos y decrementos en uno. 
+
+        //Incremento en uno ++ (sufijo==después)
+        imprimirTitulo("Incrementos y decrementos");
+        imprimirTitulo("Incremento en uno (sufijo(después))")
+        let incrementoSufijo = 10;
+        let incrementoPrefijo = 10;
+
+        imprimirContenido("incrementoSufijo : " + incrementoSufijo ); 
+        
+        imprimirContenido("incrementoSufijo++ : " + incrementoSufijo++); // -> 10
+        imprimirContenido("incrementoSufijo : " + incrementoSufijo); // -> 11
+        imprimirNotas("sufijo: primero usa la variable y después la incrementa."); 
+        //Incremento en uno ++ (prefijo==antes)
+        imprimirTitulo("Incremento en uno (prefijo(antes))"); 
+        imprimirContenido("incrementoPrefijo : " + incrementoPrefijo); // -> 10
+        imprimirContenido("++incrementoPrefijo: " + ++incrementoPrefijo); // -> 11
+        imprimirContenido("incrementoPrefijo : " + incrementoPrefijo); // -> 11
+        imprimirNotas("prefijo: primero la incrementa y después usa la variable."); 
+        
+        //Decremento en uno -- (sufijo==después)
+        imprimirTitulo("Decremento en uno (sufijo(después))"); 
+        let decrementoSufijo = 20;
+        let decrementoPrefijo = 20;
+        
+        imprimirContenido("decrementoSufijo : " + decrementoSufijo); // -> 20
+        imprimirContenido("decrementoSufijo-- : " + decrementoSufijo--); // -> 20
+        imprimirContenido("decrementoSufijo : " + decrementoSufijo); // -> 19
+        imprimirNotas("sufijo: primero usa la variable y después la decrementa."); 
+        //Decremento en uno  -- (prefijo==antes)
+        imprimirTitulo("Decremento en uno  -- (prefijo(antes))"); 
+        imprimirContenido("decrementoPrefijo : " + decrementoPrefijo); // -> 20
+        imprimirContenido("--decrementoPrefijo : " + --decrementoPrefijo); // -> 19
+        imprimirContenido("decrementoPrefijo : " + decrementoPrefijo); // -> 19
+        imprimirNotas("prefijo: primero la decrementa y después usa la variable."); 
+    
+    /***Referencias***/
+    /*
+        Mozilla. (s/f). Storing the information you need — Variables - Aprende sobre
+        desarrollo web | MDN. Recuperado el 9 de septiembre de 2019, de
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment?adlt=strict&toWww=1&redig=E83CEB41B79348B7B24BA3C83FCF17C0
+        Cisco Networking Academy 
+        https://www.netacad.com/es/courses/programming/javascript-essentials-1
+    */
+
+    </script>
